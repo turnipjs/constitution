@@ -1,7 +1,7 @@
 LATEX := $(which pdflatex)
 
-all: constitution.pdf
+all: bylaws.pdf constitution.pdf
 .PHONY: all
 
-constitution.pdf: constitution.tex formatting.tex
+%.pdf: %.tex formatting.tex name_and_mission_statement.tex
 	pdflatex --shell-escape $<
