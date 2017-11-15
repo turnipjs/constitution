@@ -1,6 +1,7 @@
 # Constitution
 
 The ACM constitution and bylaws, now in LaTeX.
+See [the Releases page](https://github.com/acmumn/constitution/releases) for rendered copies.
 
 ## Building
 
@@ -10,4 +11,4 @@ Then open `constitution.pdf` and/or `bylaws.pdf`.
 ## Making Changes
 
 Fork the repo, make the changes you want, then submit a PR.
-Officers vote on the PR (see 11.II.A of the Constitution or 7.A-C of the Bylaws), and if it's accepted, congrats, you've amended the constitution/bylaws!
+Officers vote on the PR, and if it's accepted, congrats, you've amended the constitution/bylaws!
