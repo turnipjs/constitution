@@ -1,7 +1,9 @@
 .*
 !.gitignore
+!.travis.yml
 *~
-#*#
+
+_build/
 
 *.aux
 *.log

@@ -1,0 +1,15 @@
+sudo: required
+dist: trusty
+before_install:
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
+  texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
+script:
+- make all
+deploy:
+  provider: releases
+  api_key:
+    secure: Y+Ee2iZutw7tJXl0GTkNBonyqIcqfjx/SOnvfYL0Co5GkfVXR81NagGf3dHtlg6ugMAQCGnmc5XeQaYmeR1MQzUVSUWbvnshF+lwyuVf/ZZGTy/jsb9JT6bhmb1QOGcbQPJss/feLiJZgJlYZ0Ppv87ijcmFtZ5otJEbRiMOkTZIjRQpdiOkXFaJCTcAac7519EyI0twQBBMCVvYzJIlFPYPW/PQtnue9bpM1GXy2S/X6B3fJ3KjG1Fslmmi6tYA53AJ9dy0cA4+1vB0abBZI3GdRqK4zHZNU73h+c5RM98qyp66PDPlu7jPIAvlvlvv/AMQQG/8cqyuzsvN+zuTPhVO3h4kr9pLx22Lm+XK/P9tfuavgwEAJAHXIcS6obBDKmA77l3ayFmxnSHwhxi4ofaqmYDWrifuBe8F1ZUMwvOLBOYshdr/98ZHF0TkdzClPEfNjN2B5L3V70zLcteIomk03CDQcsXzlPfTLQidZngYR9jv8SIexCiioD8V1E8weW3XqJq9IQ3DxuaPzm38qQ6VdWWu7OpTv5hdvKoZkXdTe7HqEHqngQ627ZvEM07UI0t73bNsIKqzD5M0z/1uTLqe9eI+0vNmDHlzitbnh1j7asLvaYxhbous1QttXh6xJ2yQwdU/ewax69kh2SjHEAtUPS8Z5vQ+AWF6AWR5Mo8=
+  file:
+  - _build/bylaws.pdf
+  - _build/constitution.pdf
+  skip_cleanup: true
