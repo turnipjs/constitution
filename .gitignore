@@ -1,0 +1,9 @@
+.*
+!.gitignore
+*~
+#*#
+
+*.aux
+*.log
+*.out
+*.pdf
