@@ -1,0 +1,45 @@
+%% DON'T FUCK WITH THIS UNLESS YOU KNOW WHAT YOU'RE DOING.
+%% ``TeX.StackExchange.com told me to'' does NOT count as knowing what you're
+%% doing!!!
+
+\documentclass[12pt,letterpaper]{article}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[explicit]{titlesec}
+
+\makeatletter
+\def\amended#1{\gdef\@amended{#1}}
+\def\@amended{\@latex@warning@no@line{No \noexpand\amended given}}
+\newcommand{\maketitlepage}[1]{%
+\begin{titlepage}
+	\centering
+	\par
+	\vspace*{3in}
+	\bfseries
+	{\onehalfspacing\scshape\Large The \LARGE #1 \Large of the \\ \LARGE University of Minnesota, Twin Cities \\ \Large Student Chapter of the \\ \LARGE Association for Computing Machinery \par}
+	\vspace{1in}
+	{\Large{Last Amended: \@amended}\par}
+	\vfill
+\end{titlepage}
+}
+\makeatother
+
+
+\titleformat{\section}[block]
+{\Large\bfseries\scshape}
+{Section \arabic{section}:\ }
+{0pt}{#1}
+
+\titleformat{\subsection}[runin]
+{\bfseries}
+{Subsection \Roman{subsection}:\ }
+{0pt}{#1}
+
+\setenumerate[0]{label=\alph*.}
+\setenumerate[1]{label=\Alph*.}
+
+\newcommand{\email}{\href{mailto:acm@umn.edu}{\texttt{acm@umn.edu}}}
