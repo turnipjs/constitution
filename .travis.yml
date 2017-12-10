@@ -12,6 +12,7 @@ deploy:
   file:
   - _build/bylaws.pdf
   - _build/constitution.pdf
+  - _build/rules.pdf
   on:
     repo: acmumn/constitution
   skip_cleanup: true
