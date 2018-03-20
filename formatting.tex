@@ -12,8 +12,6 @@
 \usepackage[explicit]{titlesec}
 
 \makeatletter
-\def\amended#1{\gdef\@amended{#1}}
-\def\@amended{\@latex@warning@no@line{No \noexpand\amended given}}
 \newcommand{\maketitlepage}[1]{%
 \begin{titlepage}
 	\centering
@@ -22,7 +20,7 @@
 	\bfseries
 	{\onehalfspacing\scshape\Large The \LARGE #1 \Large of the \\ \LARGE University of Minnesota, Twin Cities \\ \Large Student Chapter of the \\ \LARGE Association for Computing Machinery \par}
 	\vspace{1in}
-	{\Large{Last Amended: \@amended}\par}
+	{\Large{Last Amended: \input{_build/commit_date.txt}}\par}
 	\vfill
 \end{titlepage}
 }
