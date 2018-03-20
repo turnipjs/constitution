@@ -5,6 +5,7 @@
 \documentclass[12pt,letterpaper]{article}
 \usepackage{enumitem}
 \usepackage[T1]{fontenc}
+\usepackage{forloop}
 \usepackage[margin=0.75in]{geometry}
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
@@ -12,8 +13,6 @@
 \usepackage[explicit]{titlesec}
 
 \makeatletter
-\def\amended#1{\gdef\@amended{#1}}
-\def\@amended{\@latex@warning@no@line{No \noexpand\amended given}}
 \newcommand{\maketitlepage}[1]{%
 \begin{titlepage}
 	\centering
@@ -22,7 +21,7 @@
 	\bfseries
 	{\onehalfspacing\scshape\Large The \LARGE #1 \Large of the \\ \LARGE University of Minnesota, Twin Cities \\ \Large Student Chapter of the \\ \LARGE Association for Computing Machinery \par}
 	\vspace{1in}
-	{\Large{Last Amended: \@amended}\par}
+	{\Large{Last Amended: \input{_build/commit_date.txt}}\par}
 	\vfill
 \end{titlepage}
 }
@@ -43,3 +42,15 @@
 \setenumerate[1]{label=\Alph*.}
 
 \newcommand{\email}{\href{mailto:acm@umn.edu}{\texttt{acm@umn.edu}}}
+
+\newcommand{\signatures}[1]{%
+	\newpage
+	{\Large\bfseries\scshape Officer Signatures}
+	\vspace{1in}
+	\newcounter{signaturenumber}
+	\forloop{signaturenumber}{0}{\value{signaturenumber} < #1}{
+		\par
+		\vspace{1in}
+		\rule{6in}{0.4pt}
+	}
+}
