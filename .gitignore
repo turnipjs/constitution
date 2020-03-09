@@ -9,3 +9,6 @@ _build/
 *.log
 *.out
 *.pdf
+
+*.fdb_latexmk
+*.fls
